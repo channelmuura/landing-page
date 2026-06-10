@@ -22,17 +22,16 @@
 
         <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
         <link rel="icon" type="image/png" href="images/favicon.png"/>
-        <script src="js/jquery.js"></script>
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-                const element = document.getElementById('bg-container');
+                const element = document.getElementById('glass');
                 if (element){
                     if (!isSafari) { 
                         element.classList.add('grain');
                     } else {
-                        element.classList.add('hide');
+                        element.classList.add('blur');
                     }
                 }
             });
@@ -56,17 +55,14 @@
                 <stop stop-color="#fc3531" offset=".2"></stop>
                 <stop stop-color="#f5fe7e" offset="1"></stop>
             </linearGradient>
-            <linearGradient id="g02">
-                <stop stop-color="#1a0ce5" offset=".2"></stop>
-                <stop stop-color="#f5fe7e" offset="1"></stop>
-            </linearGradient>
             <g id="bg-container">
-                <rect width="100%" height="100%" fill="#fff"></rect>
                 <ellipse class="blob01" rx="45%" ry="45%" cx="-10%" fill="url(#g01)"></ellipse>
                 <circle class="blob02" r="25%" cx="95%" cy="50%" fill="url(#g02)"></circle>
                 <circle class="blob03" r="25%" cx="20%" cy="115%" fill="url(#g02)"></circle>
             </g>
             </svg>
+
+        <div id="glass"></div>
         <div class="center">
             <h1>MUURA</h1>
             <h2>Channeling imagination.</h2>

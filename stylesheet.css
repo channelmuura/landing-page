@@ -10,11 +10,11 @@ svg[height="0"][aria-hidden=true] {
 }
 
 .grain {
-  filter: url(#grain);
+    backdrop-filter: url(#grain);
 }
 
-.hide{
-    display: none;
+.blur {
+    backdrop-filter: blur(30px);
 }
 
 .card {
@@ -22,6 +22,15 @@ svg[height="0"][aria-hidden=true] {
 	height: 100vh;
 	/* clip-path: inset(calc(5% + 4px)) */
     position:absolute;
+    z-index: -1;
+}
+
+#glass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
