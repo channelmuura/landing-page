@@ -1,0 +1,129 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+/* take out of document flow */
+svg[height="0"][aria-hidden=true] {
+  position: fixed;
+}
+
+.grain {
+  filter: url(#grain);
+}
+
+.hide{
+    display: none;
+}
+
+.card {
+	width: 100vw;
+	height: 100vh;
+	/* clip-path: inset(calc(5% + 4px)) */
+    position:absolute;
+    z-index: -1;
+}
+
+g > * {
+    transform-origin: center;
+}
+
+.blob01 {
+    animation: drift-1 4s ease-in-out infinite alternate;
+}
+
+.blob02 {
+    animation: drift-2 5s ease-in-out infinite alternate;
+}
+.blob03 {
+    animation: drift-3 4s ease-in-out infinite alternate;
+}
+
+@keyframes drift-1 {
+  from { transform: translate(0%, 0%) scale(1); }
+  to   { transform: translate(calc(0% + 5%), calc(0% + 2%)) scale(1.08); }
+}
+
+@keyframes drift-2 {
+  from { transform: translate(0%, 0%) scale(1); }
+  to   { transform: translate(calc(0% + -5%), calc(0% + 2%)) scale(1.08); }
+}
+
+@keyframes drift-3 {
+  from { transform: translate(0%, 0%) scale(1); }
+  to   { transform: translate(calc(0% + 10%), calc(0% + -5%)) scale(1.08); }
+}
+
+/* @keyframes drift-4 {
+  from { transform: translate(0%, 0%) scale(1); }
+  to   { transform: translate(calc(0% + 35px), calc(0% + -20px)) scale(1.08); }
+}
+
+@keyframes drift-5 {
+  from { transform: translate(0%, 0%) scale(1); }
+  to   { transform: translate(calc(0% + -15px), calc(0% + 20px)) scale(1.08); }
+} */
+
+@font-face {
+    font-family: 'Outfit-ExtraLight';
+    src: url('./fonts/Outfit-ExtraLight.ttf') format('truetype');
+    font-weight: light;
+    font-style: light;
+}
+
+@font-face {
+    font-family: 'Outfit-Light';
+    src: url('./fonts/Outfit-Light.ttf') format('truetype');
+    font-weight: light;
+    font-style: light;
+}
+
+h1, h2, h3, #footer {
+    text-align: center;
+    font-family: 'Outfit-Light', 'Arial', sans-serif;
+    color: #333333;
+    margin-top: 1rem;
+}
+
+h1 {
+    font-family: 'Outfit-ExtraLight', 'Arial', sans-serif;
+    font-size: 3rem;
+    letter-spacing: .75em;
+    padding-left: .75em;
+    
+}
+
+h2 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+h3 {
+    font-size: .85rem;
+    margin-top: 0.35rem;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: .9rem;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+a {
+    color: #333333;
+    text-decoration: underline;
+    font-weight: bold;
+    
+}
