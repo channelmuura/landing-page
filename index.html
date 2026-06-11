@@ -26,11 +26,10 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-                const element = document.getElementById('glass');
+                const element = document.getElementById('bg');
                 if (element){
-                    if (!isSafari) { 
-                        element.classList.add('grain');
-                    } else {
+                    if (isSafari) { 
+                        element.classList.remove('grain');
                         element.classList.add('blur');
                     }
                 }
@@ -42,11 +41,11 @@
         <svg width="0" height="0" aria-hidden="true">
             <filter id="grain" color-interpolation-filters="sRGB" primitiveUnits="objectBoundingBox">
                 <feTurbulence type="fractalNoise" baseFrequency=".713" numOctaves="4"></feTurbulence>
-                <feDisplacementMap in="SourceGraphic" scale=".1" xChannelSelector="R"></feDisplacementMap>
+                <feDisplacementMap in="SourceGraphic" scale=".06" xChannelSelector="R"></feDisplacementMap>
                 <feBlend in2="SourceGraphic"></feBlend>
             </filter>
         </svg>
-        <svg id="bg" class="card">
+        <svg id="bg" class="card grain" style="overflow:visible;">
             <linearGradient id="g01">
                 <stop stop-color="#1a0ce5"></stop>
                 <stop stop-color="#fc3531" offset="1"></stop>
@@ -56,13 +55,13 @@
                 <stop stop-color="#f5fe7e" offset="1"></stop>
             </linearGradient>
             <g id="bg-container">
+                <rect x="-5%" y="-5%" width="110%" height="110%" fill="#fff"></rect>
                 <ellipse class="blob01" rx="45%" ry="45%" cx="-10%" fill="url(#g01)"></ellipse>
                 <circle class="blob02" r="25%" cx="95%" cy="50%" fill="url(#g02)"></circle>
                 <circle class="blob03" r="25%" cx="20%" cy="115%" fill="url(#g02)"></circle>
             </g>
         </svg>
-        
-        <div id="glass"></div>
+
         <div id="container">
             <div class="center">
                 <h1>MUURA</h1>
